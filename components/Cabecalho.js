@@ -5,7 +5,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 const Cabecalho = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="success" variant="dark">
         <Container>
           <Navbar.Brand href="#home">Veterinaria</Navbar.Brand>
           <Nav className="me-auto">
