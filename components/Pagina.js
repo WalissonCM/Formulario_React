@@ -15,7 +15,7 @@ const Pagina = (props) => {
       <Container className='pb-5 mb-5'>
         {props.children}
       </Container>
-      <div style={{ width: '100%' }} className=' bg-secondary bottom-0 position-fixed py-3 text-white text-center'>
+      <div style={{ width: '100%' }} className=' bg-dark bg-gradient bottom-0 position-fixed py-3 text-white text-center'>
         <p>Todos os direitos reservados</p>
       </div>
     </>

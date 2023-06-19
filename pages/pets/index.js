@@ -56,7 +56,7 @@ const index = () => {
                 </td>
                 <td>{item.nome}</td>
                 <td>{item.tipo}</td>
-                <td>{item.raça_especie}</td>
+                <td>{item.raca_especie}</td>
                 <td>{item.peso}</td>
                 </tr>
              ))}     

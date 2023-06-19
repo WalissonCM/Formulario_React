@@ -1,5 +1,6 @@
 import Pagina from '@/components/Pagina'
-import petValidator from '@/validators/exameValidator'
+import petValidator from '@/validators/petValidator'
+
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -50,12 +51,12 @@ const form = () => {
             }
          </Form.Group>
          
-         <Form.Group className="mb-3" controlId="raça_especie">
+         <Form.Group className="mb-3" controlId="raca_especie">
            <Form.Label>Raça/Espécie: </Form.Label>
-           <Form.Control  type="text" {...register('raça_especie', petValidator.raça_especie)}/>
+           <Form.Control  type="text" {...register('raca_especie', petValidator.raca_especie)}/>
             {
-              errors.raça_especie &&
-              <small className='text-danger'>{errors.raça_especie.message}</small>
+              errors.raca_especie &&
+              <small className='text-danger'>{errors.raca_especie.message}</small>
             }
          </Form.Group>
 

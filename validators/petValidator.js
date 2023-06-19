@@ -21,7 +21,7 @@ const petValidator = {
             message: 'A quantidade de caracteres máxima é 20'
         }
     },
-    raça_especie: {
+    raca_especie: {
         required: 'O campo é obrigatório',
         minLength: {
             value: 5,

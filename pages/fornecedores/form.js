@@ -1,5 +1,6 @@
 import Pagina from '@/components/Pagina'
-import fornecedorValidator from '@/validators/clienteValidator'
+import fornecedorValidator from '@/validators/fornecedorValidator'
+
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

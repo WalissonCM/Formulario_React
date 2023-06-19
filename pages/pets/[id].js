@@ -46,9 +46,9 @@ const form = () => {
            <Form.Control type="text" {...register('tipo')}/>
          </Form.Group>
 
-         <Form.Group className="mb-3" controlId="raça_especie">
+         <Form.Group className="mb-3" controlId="raca_especie">
            <Form.Label>Raça/Espécie: </Form.Label>
-           <Form.Control type="text" {...register('raça_especie')}/>
+           <Form.Control type="text" {...register('raca_especie')}/>
          </Form.Group>
          <Form.Group className="mb-3" controlId="peso">
            <Form.Label>Peso: </Form.Label>

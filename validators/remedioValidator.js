@@ -19,6 +19,10 @@ const remedioValidator = {
     },
     data_validade: {
         required: 'O campo é obrigatório',
+        minLength: {
+            value: 10,
+            message: 'A quantidade de caracteres mínima é 10'
+        },
         maxLength: {
             value: 10,
             message: 'A quantidade de caracteres máxima é 10'
