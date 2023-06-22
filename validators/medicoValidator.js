@@ -1,4 +1,4 @@
-const clienteValidator = {
+const medicoValidator = {
     nome: {
         required: 'O campo é obrigatório',
         minLength: {
@@ -10,11 +10,25 @@ const clienteValidator = {
             message: 'A quantidade de caracteres máxima é 20'
         }
     },
+    funcao: {
+        required: 'O campo é obrigatório',
+        maxLength: {
+            value: 10,
+            message: 'A quantidade de caracteres máxima é 10'
+        }
+    },
     cpf: {
         required: 'O campo é obrigatório',
         maxLength: {
             value: 15,
             message: 'A quantidade de caracteres máxima é 15'
+        }
+    },
+    salario: {
+        required: 'O campo é obrigatório',
+        maxLength: {
+            value: 12,
+            message: 'A quantidade de caracteres máxima é 12'
         }
     },
     email: {
@@ -77,4 +91,4 @@ const clienteValidator = {
 
 }
 
-export default clienteValidator
+export default medicoValidator

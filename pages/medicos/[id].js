@@ -18,11 +18,11 @@ const form = () => {
   if (query.id) {
                                     
     
-    axios.get('/api/clientes/' + query.id).then(resultado=>{
-      const cliente = resultado.data
+    axios.get('/api/medicos/' + query.id).then(resultado=>{
+      const medico = resultado.data
 
-    for(let atributo in cliente){
-      setValue(atributo, cliente[atributo])
+    for(let atributo in medico){
+      setValue(atributo, medico[atributo])
      
     }
   })
@@ -31,12 +31,12 @@ const form = () => {
 
   function salvar (dados) {
     
-    axios.put('/api/clientes/' + dados.id, dados)
-    push('/clientes') 
+    axios.put('/api/medicos/' + dados.id, dados)
+    push('/medicos') 
   }
   
   return (
-    <Pagina titulo="Clientes">
+    <Pagina titulo="Medicos">
 
       <Form>
          
@@ -48,6 +48,16 @@ const form = () => {
           <Form.Group className="mb-3" controlId="cpf">
            <Form.Label>Cpf: </Form.Label>
            <Form.Control type="text" {...register('cpf')}/>
+          </Form.Group>
+         
+          <Form.Group className="mb-3" controlId="funcao">
+           <Form.Label>Funcao: </Form.Label>
+           <Form.Control type="text" {...register('funcao')}/>
+          </Form.Group>
+         
+          <Form.Group className="mb-3" controlId="salario">
+           <Form.Label>Salario: </Form.Label>
+           <Form.Control type="text" {...register('salario')}/>
           </Form.Group>
          
           <Form.Group className="mb-3" controlId="email">

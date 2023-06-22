@@ -8,30 +8,30 @@ import { BsFillPencilFill } from 'react-icons/bs'
 
 const index = () => {
   
-  const [funcionarios, setFuncionarios] = useState([])
+  const [medicos, setMedicos] = useState([])
 
   useEffect(()=>{
     getAll()
   }, [])
 
   function getAll() {
-    axios.get('/api/funcionarios').then(resultado=>{
-      setFuncionarios(resultado.data)
+    axios.get('/api/medicos').then(resultado=>{
+      setMedicos(resultado.data)
   })
 }
 
   function excluir(id) {
     
     if(confirm('Deseja realmente excluir o registro?')){
-      axios.delete('/api/funcionarios/' + id)
+      axios.delete('/api/medicos/' + id)
       getAll()
    }
 }
 
   return (
-    <Pagina titulo="Funcionarios">
+    <Pagina titulo="Medicos">
 
-      <Link href={'/funcionarios/form'} className="btn btn-primary mb-2">Novo</Link>
+      <Link href={'/medicos/form'} className="btn btn-primary mb-2">Novo</Link>
 
       <Table striped bordered hover>
             
@@ -53,10 +53,10 @@ const index = () => {
             </thead>
             
             <tbody>
-             {funcionarios.map( (item) => (
+             {medicos.map( (item) => (
               <tr key={item.id}>
                 <td>
-                  <Link href={'/funcionarios/' + item.id}>
+                  <Link href={'/medicos/' + item.id}>
                   <BsFillPencilFill className='me-2 text-primary'/>
                   </Link>
                   <AiOutlineDelete onClick={() => excluir(item.id)} className='text-danger' type='submit' />

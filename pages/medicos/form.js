@@ -1,5 +1,5 @@
 import Pagina from '@/components/Pagina'
-import funcionarioValidator from '@/validators/funcionarioValidator'
+import medicoValidator from '@/validators/medicoValidator'
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -16,8 +16,8 @@ const form = () => {
   const {register, handleSubmit, setValue, formState:{errors}} = useForm()
 
   function salvar (dados) {
-    axios.post('/api/funcionarios', dados)
-    push('/funcionarios') 
+    axios.post('/api/medicos', dados)
+    push('/medicos') 
   }
 
   function handleChange (event) {
@@ -28,13 +28,13 @@ const form = () => {
   }
   
   return (
-    <Pagina titulo="Funcionarios">
+    <Pagina titulo="Medicos">
 
       <Form>
          
       <Form.Group className="mb-3" controlId="nome">
            <Form.Label>Nome: </Form.Label>
-           <Form.Control type="text" {...register('nome', funcionarioValidator.nome)}/>
+           <Form.Control type="text" {...register('nome', medicoValidator.nome)}/>
             {
               errors.nome &&
               <small className='text-danger'>{errors.nome.message}</small>
@@ -43,7 +43,7 @@ const form = () => {
 
           <Form.Group className="mb-3" controlId="cpf">
            <Form.Label>Cpf: </Form.Label>
-           <Form.Control type="text" mask= "999.999.999-99" {...register('cpf', funcionarioValidator.cpf)} onChange={handleChange}/>
+           <Form.Control type="text" mask= "999.999.999-99" {...register('cpf', medicoValidator.cpf)} onChange={handleChange}/>
             {
               errors.cpf &&
               <small className='text-danger'>{errors.cpf.message}</small>
@@ -52,7 +52,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="funcao">
            <Form.Label>Funcao: </Form.Label>
-           <Form.Control type="text" {...register('funcao', funcionarioValidator.funcao)}/>
+           <Form.Control type="text" {...register('funcao', medicoValidator.funcao)}/>
             {
               errors.funcao &&
               <small className='text-danger'>{errors.funcao.message}</small>
@@ -61,7 +61,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="salario">
            <Form.Label>Salario: </Form.Label>
-           <Form.Control type="text" mask= "R$ 99.999,00" {...register('salario', funcionarioValidator.salario)} onChange={handleChange}/>
+           <Form.Control type="text" mask= "R$ 99.999,00" {...register('salario', medicoValidator.salario)} onChange={handleChange}/>
             {
               errors.salario &&
               <small className='text-danger'>{errors.salario.message}</small>
@@ -70,7 +70,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="email">
            <Form.Label>Email: </Form.Label>
-           <Form.Control type="text" {...register('email', funcionarioValidator.email)}/>
+           <Form.Control type="text" {...register('email', medicoValidator.email)}/>
             {
               errors.email &&
               <small className='text-danger'>{errors.email.message}</small>
@@ -79,7 +79,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="telefone">
            <Form.Label>Telefone: </Form.Label>
-           <Form.Control type="text" mask= "(99) 99999-9999" {...register('telefone', funcionarioValidator.telefone)} onChange={handleChange}/>
+           <Form.Control type="text" mask= "(99) 99999-9999" {...register('telefone', medicoValidator.telefone)} onChange={handleChange}/>
             {
               errors.telefone &&
               <small className='text-danger'>{errors.telefone.message}</small>
@@ -88,7 +88,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="cep">
            <Form.Label>Cep: </Form.Label>
-           <Form.Control type="text" mask= "99.999-999" {...register('cep', funcionarioValidator.cep)} onChange={handleChange}/>
+           <Form.Control type="text" mask= "99.999-999" {...register('cep', medicoValidator.cep)} onChange={handleChange}/>
             {
               errors.cep &&
               <small className='text-danger'>{errors.cep.message}</small>
@@ -97,7 +97,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="logradouro">
            <Form.Label>Logradouro: </Form.Label>
-           <Form.Control type="text" {...register('logradouro', funcionarioValidator.logradouro)}/>
+           <Form.Control type="text" {...register('logradouro', medicoValidator.logradouro)}/>
             {
               errors.logradouro &&
               <small className='text-danger'>{errors.logradouro.message}</small>
@@ -106,7 +106,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="complemento">
            <Form.Label>Complemento: </Form.Label>
-           <Form.Control type="text" {...register('complemento', funcionarioValidator.complemento)}/>
+           <Form.Control type="text" {...register('complemento', medicoValidator.complemento)}/>
             {
               errors.complemento &&
               <small className='text-danger'>{errors.complemento.message}</small>
@@ -115,7 +115,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="numero">
            <Form.Label>Numero: </Form.Label>
-           <Form.Control type="text" {...register('numero', funcionarioValidator.numero)}/>
+           <Form.Control type="text" {...register('numero', medicoValidator.numero)}/>
             {
               errors.numero &&
               <small className='text-danger'>{errors.numero.message}</small>
@@ -124,7 +124,7 @@ const form = () => {
          
           <Form.Group className="mb-3" controlId="bairro">
            <Form.Label>Bairro: </Form.Label>
-           <Form.Control type="text" {...register('bairro', funcionarioValidator.bairro)}/>
+           <Form.Control type="text" {...register('bairro', medicoValidator.bairro)}/>
             {
               errors.bairro &&
               <small className='text-danger'>{errors.bairro.message}</small>
