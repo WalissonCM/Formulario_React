@@ -3,8 +3,8 @@ import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
-import { AiOutlineDelete } from 'react-icons/ai'
-import { BsFillPencilFill } from 'react-icons/bs'
+import { FiDelete } from 'react-icons/fi'
+import { FaEdit } from 'react-icons/fa'
 
 const index = () => {
   
@@ -30,9 +30,9 @@ const index = () => {
 
   return (
     <Pagina titulo="Exames">
-
-      <Link href={'/exames/form'} className="btn btn-primary mb-2">Novo</Link>
-
+    
+      <Link href={'/exames/form'} className="btn btn-primary my-2">Novo</Link>
+      
       <Table striped bordered hover>
             
             <thead>   
@@ -40,7 +40,6 @@ const index = () => {
               <th></th>
               <th>Tipo de Exame</th>
               <th>Data</th>
-              <th>Resultado</th>
             </tr>     
             </thead>
             
@@ -49,13 +48,12 @@ const index = () => {
               <tr key={item.id}>
                 <td>
                   <Link href={'/exames/' + item.id}>
-                  <BsFillPencilFill className='me-2 text-primary'/>
+                  <FaEdit className='me-2 text-black'/>
                   </Link>
-                  <AiOutlineDelete onClick={() => excluir(item.id)} className='text-danger' type='submit' />
+                  <FiDelete onClick={() => excluir(item.id)} className='text-danger' type='submit' />
                 </td>
-                <td>{item.tipo}</td>
+                <td>{item.tipo_exame}</td>
                 <td>{item.data}</td>
-                <td>{item.resultado}</td>
                 </tr>
              ))}     
             </tbody>

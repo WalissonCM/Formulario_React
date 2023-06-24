@@ -39,45 +39,62 @@ const form = () => {
     <Pagina titulo="Fornecedores">
 
       <Form>
-         
-      <Form.Group className="mb-3" controlId="nome">
+      <Row>
+      <Form.Group as={Col} md="5" controlId="nome">
            <Form.Label>Nome: </Form.Label>
            <Form.Control type="text" {...register('nome')}/>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="cnpj">
+          <Form.Group as={Col} md="2" controlId="cnpj">
            <Form.Label>Cnpj: </Form.Label>
            <Form.Control type="text" {...register('cnpj')}/>
           </Form.Group>
          
-          <Form.Group className="mb-3" controlId="email">
+          <Form.Group as={Col} md="3" controlId="email">
            <Form.Label>Email: </Form.Label>
            <Form.Control type="text" {...register('email')}/>
           </Form.Group>
          
-          <Form.Group className="mb-3" controlId="telefone">
+          <Form.Group as={Col} md="2" controlId="telefone">
            <Form.Label>Telefone: </Form.Label>
            <Form.Control type="text" {...register('telefone')}/>         
           </Form.Group>
           
-          <Form.Group className="mb-3" controlId="estado">
-           <Form.Label>Estado: </Form.Label>
-           <Form.Control type="text" {...register('estado')}/>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="cep">
+          <Form.Group as={Col} md="2" className='mt-2' controlId="cep">
            <Form.Label>Cep: </Form.Label>
            <Form.Control type="text" {...register('cep')}/>
           </Form.Group>
          
-         
-         
+          <Form.Group as={Col} md="2" className='mt-2' controlId="address">
+           <Form.Label>Rua: </Form.Label>
+           <Form.Control type="text" {...register("address")}/>
+          </Form.Group> 
           
-         <div className='text-center'>
+          <Form.Group as={Col} md="2" className='mt-2' controlId="addressNumber">
+           <Form.Label>Numero: </Form.Label>
+           <Form.Control type="text" {...register('addressNumber')}/>
+          </Form.Group> 
+          
+          <Form.Group as={Col} md="2" className='mt-2' controlId="neighborhood">
+           <Form.Label>Bairro: </Form.Label>
+           <Form.Control type="text" {...register('neighborhood')}/>
+          </Form.Group> 
+          
+          <Form.Group as={Col} md="2" className='mt-2' controlId="city">
+           <Form.Label>Cidade: </Form.Label>
+           <Form.Control type="text" {...register('city')}/>
+          </Form.Group>
+         
+          <Form.Group as={Col} md="2" className='mt-2' controlId="uf">
+           <Form.Label>Estado: </Form.Label>
+           <Form.Control type="text" {...register('uf')}/>
+          </Form.Group>
+         
+         <div className='text-center mt-2'>
          <Button variant="success" onClick={handleSubmit(salvar)}><AiOutlineCheck className='me-1'/> Salvar</Button>
          <Link href={'/cursos'} className="ms-2 btn btn-danger"><IoMdArrowRoundBack className='me-1'/>Voltar</Link>
          </div>
-      
+         </Row>
       </Form>
 
     </Pagina>

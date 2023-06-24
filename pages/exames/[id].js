@@ -3,7 +3,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import { Button, Col, Form } from 'react-bootstrap'
 import {useForm} from 'react-hook-form'
 import {AiOutlineCheck} from 'react-icons/ai'
 import {IoMdArrowRoundBack} from 'react-icons/io'
@@ -36,22 +36,25 @@ const form = () => {
 
       <Form>
          
-         <Form.Group className="mb-3" controlId="tipo">
-           <Form.Label>Tipo de Exame: </Form.Label>
-           <Form.Control type="text" {...register('tipo')}/>
+         <Form.Group as={Col} md="3">
+           <Form.Label>Selecione o exame: </Form.Label>
+          <select required id='tipo_exame' {...register('tipo_exame')} class="form-select" aria-label="Default select example">
+            <option value="" disabled selected hidden>Exames</option>
+            <option value="Hemograma">Hemograma</option>
+            <option value="Exame de urina">Exame de urina</option>
+            <option value="Coproparasitológico">Coproparasitológico</option>
+            <option value="Função hepática">Função hepática</option>
+            <option value="Ultrassonografia abdominal">Ultrassonografia abdominal</option>
+            <option value="Eletrocardiograma">Eletrocardiograma</option>
+          </select>
          </Form.Group>
 
-         <Form.Group className="mb-3" controlId="data">
-           <Form.Label>Data: </Form.Label>
+         <Form.Group as={Col} md="2" controlId="data">
+           <Form.Label>Data do Exame: </Form.Label>
            <Form.Control type="text" {...register('data')}/>
          </Form.Group>
-
-         <Form.Group className="mb-3" controlId="resultado">
-           <Form.Label>Resultado: </Form.Label>
-           <Form.Control type="text" {...register('resultado')}/>
-         </Form.Group>
          
-         <div className='text-center'>
+         <div className='text-center mt-2'>
          <Button variant="success" onClick={handleSubmit(salvar)}><AiOutlineCheck className='me-1'/> Salvar</Button>
          <Link href={'/exames'} className="ms-2 btn btn-danger"><IoMdArrowRoundBack className='me-1'/>Voltar</Link>
          </div>

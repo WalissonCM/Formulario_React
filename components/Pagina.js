@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap'
 import Cabecalho from './Cabecalho'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const Pagina = (props) => {
   return (
     <>
@@ -12,7 +13,7 @@ const Pagina = (props) => {
           <h1>{props.titulo}</h1>
         </Container >
       </div>
-      <Container className='pb-5 mb-5'>
+      <Container>
         {props.children}
       </Container>
     </>

@@ -15,61 +15,51 @@ const form = () => {
 
   useEffect(() => {
   
-  if (query.id) {
-                                    
-    
-    axios.get('/api/medicos/' + query.id).then(resultado=>{
-      const medico = resultado.data
+  if (query.id) {                          
+    axios.get('/api/clientes/' + query.id).then(resultado=>{
+      const cliente = resultado.data
 
-    for(let atributo in medico){
-      setValue(atributo, medico[atributo])
-     
+    for(let atributo in cliente){
+      setValue(atributo, cliente[atributo])
     }
   })
 }
   }, [query.id])
 
   function salvar (dados) {
-    
-    axios.put('/api/medicos/' + dados.id, dados)
-    push('/medicos') 
+    axios.put('/api/clientes/' + dados.id, dados)
+    push('/clientes') 
   }
   
   return (
-    <Pagina titulo="Medicos">
+    <Pagina titulo="Clientes">
 
       <Form>
-       <Row>  
-      <Form.Group as={Col} md="5" controlId="nome">
+      <Row>
+         <Form.Group as={Col} md="5" controlId="nome">
            <Form.Label>Nome: </Form.Label>
            <Form.Control type="text" {...register('nome')}/>
-          </Form.Group>
-
-          <Form.Group as={Col} md="2" controlId="cpf">
+         </Form.Group>
+         <Form.Group as={Col} md="2" controlId="cpf">
            <Form.Label>Cpf: </Form.Label>
            <Form.Control type="text" {...register('cpf')}/>
           </Form.Group>
          
-          <Form.Group as={Col} md="2" controlId="salario">
-           <Form.Label>Salario: </Form.Label>
-           <Form.Control type="text" {...register('salario')}/>
-          </Form.Group>
-         
-          <Form.Group  as={Col} md="3" className='mt-2' controlId="email">
+          <Form.Group as={Col} md="3" controlId="email">
            <Form.Label>Email: </Form.Label>
            <Form.Control type="text" {...register('email')}/>
           </Form.Group>
          
-          <Form.Group as={Col} md="2" className='mt-2' controlId="telefone">
+          <Form.Group as={Col} md="2" controlId="telefone">
            <Form.Label>Telefone: </Form.Label>
            <Form.Control type="text" {...register('telefone')}/>         
           </Form.Group>
          
-          <Form.Group as={Col} md="2" className='mt-2' controlId="cep">
+          <Form.Group  as={Col} md="2" controlId="cep">
            <Form.Label>Cep: </Form.Label>
            <Form.Control type="text" {...register('cep')}/>
           </Form.Group>
-         
+
           <Form.Group as={Col} md="2" className='mt-2' controlId="address">
            <Form.Label>Rua: </Form.Label>
            <Form.Control type="text" {...register("address")}/>
@@ -95,11 +85,25 @@ const form = () => {
            <Form.Control type="text" {...register('uf')}/>
           </Form.Group>
          
+         <Form.Group as={Col} md="2" controlId="tipo_animal">
+           <Form.Label>Tipo de Animal: </Form.Label>
+           <Form.Control type="text" {...register('tipo_animal')}/>
+         </Form.Group>
+
+         <Form.Group as={Col} md="2" controlId="raca">
+           <Form.Label>Raça: </Form.Label>
+           <Form.Control type="text" {...register('raca')}/>
+         </Form.Group>
+         <Form.Group as={Col} md="1" controlId="peso">
+           <Form.Label>Peso: </Form.Label>
+           <Form.Control type="text" {...register('peso')}/>
+         </Form.Group>
+         
          <div className='text-center mt-2'>
          <Button variant="success" onClick={handleSubmit(salvar)}><AiOutlineCheck className='me-1'/> Salvar</Button>
-         <Link href={'/cursos'} className="ms-2 btn btn-danger"><IoMdArrowRoundBack className='me-1'/>Voltar</Link>
+         <Link href={'/clientes'} className="ms-2 btn btn-danger"><IoMdArrowRoundBack className='me-1'/>Voltar</Link>
          </div>
-      </Row>
+         </Row>
       </Form>
 
     </Pagina>

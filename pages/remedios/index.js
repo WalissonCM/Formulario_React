@@ -3,8 +3,8 @@ import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
-import { AiOutlineDelete } from 'react-icons/ai'
-import { BsFillPencilFill } from 'react-icons/bs'
+import { FiDelete } from 'react-icons/fi'
+import { FaEdit } from 'react-icons/fa'
 
 const index = () => {
   
@@ -39,7 +39,9 @@ const index = () => {
             <tr>
             <th></th>
               <th>Nome</th>
+              <th>Descrição do Produto</th>
               <th>Preço</th>
+              <th>Tipo de Animal</th>
               <th>Data de Validade</th>
             </tr>     
             </thead>
@@ -49,12 +51,14 @@ const index = () => {
               <tr key={item.id}>
                 <td>
                   <Link href={'/remedios/' + item.id}>
-                  <BsFillPencilFill className='me-2 text-primary'/>
+                  <FaEdit className='me-2 text-black'/>
                   </Link>
-                  <AiOutlineDelete onClick={() => excluir(item.id)} className='text-danger' type='submit' />
+                  <FiDelete onClick={() => excluir(item.id)} className='text-danger' type='submit' />
                 </td>
                 <td>{item.nome}</td>
+                <td>{item.descricao}</td>
                 <td>{item.preco}</td>
+                <td>{item.animal}</td>
                 <td>{item.data_validade}</td>
                 </tr>
              ))}     
