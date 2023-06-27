@@ -150,15 +150,28 @@ const form = () => {
             <option value="Exótico">Exótico</option>
           </select>
           
-           //$("#select1").change(function(){
-          //if($(this).val() == 3){
-          //$("#select2").show()
-         //}else{
-          //$("#select2").hide()
-         //}  
+ {/* <select id="1">
+<option value="1">....</option>
+<option value="2">....</option>
+<option value="3">....</option> 
+</select>
 
-         })
+<select id="2" style="display:none;">
+<option value="1">....</option>
+<option value="2">....</option>
+<option value="3">....</option> 
+</select>
+Your Jquery Here
 
+$("#1").change(function(){
+    if($(this).val() == 3){
+      $("#2").show();
+    }else{
+      $("#2").hide();
+    }
+
+});  */}
+          
          </Form.Group>
 
          <Form.Group  as={Col} md="1" className='mt-2' controlId="peso">

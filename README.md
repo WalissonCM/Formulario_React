@@ -11,7 +11,7 @@ yarn dev
 # or
 pnpm dev
 ```
-# <select id="1">
+/* <select id="1">
 <option value="1">....</option>
 <option value="2">....</option>
 <option value="3">....</option> 
@@ -31,7 +31,7 @@ $("#1").change(function(){
       $("#2").hide();
     }
 
-});
+}); */
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
