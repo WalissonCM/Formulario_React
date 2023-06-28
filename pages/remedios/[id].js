@@ -50,12 +50,12 @@ const form = () => {
            <Form.Control type="text" {...register('descricao')}/>
           </Form.Group>
           
-          <Form.Group as={Col} md="1" controlId="preco">
+          <Form.Group as={Col} md="2" controlId="preco">
            <Form.Label>Preço: </Form.Label>
            <Form.Control type="text" {...register('preco')}/>
           </Form.Group>
           
-          <Form.Group as={Col} md="2" controlId="animal">
+          <Form.Group as={Col} md="4" controlId="animal">
            <Form.Label>Tipo de Animal: </Form.Label>
            <Form.Control type="text" {...register('animal')}/>
           </Form.Group>

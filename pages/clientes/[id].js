@@ -2,7 +2,7 @@ import Pagina from '@/components/Pagina'
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import {useForm} from 'react-hook-form'
 import {AiOutlineCheck} from 'react-icons/ai'
@@ -12,6 +12,7 @@ const form = () => {
   
   const { push, query } = useRouter()
   const {register, handleSubmit, setValue} = useForm()
+  const [animalType, setAnimalType] = useState('');
 
   useEffect(() => {
   
@@ -29,6 +30,12 @@ const form = () => {
   function salvar (dados) {
     axios.put('/api/clientes/' + dados.id, dados)
     push('/clientes') 
+  }
+
+  const handleAnimalTypeChange = (event) => {
+    const selectedType = event.target.value;
+    setAnimalType(selectedType);
+
   }
   
   return (
@@ -87,13 +94,80 @@ const form = () => {
          
          <Form.Group as={Col} md="2" controlId="tipo_animal">
            <Form.Label>Tipo de Animal: </Form.Label>
-           <Form.Control type="text" {...register('tipo_animal')}/>
+           <div>
+                  <select
+                    required
+                    id="tipo_animal"
+                    {...register('tipo_animal')}
+                    value={animalType}
+                    onChange={handleAnimalTypeChange}
+                    className="form-select"
+                    aria-label="Default select example"
+                    
+                  >
+                    <option value="" disabled selected hidden>
+                      Animal
+                    </option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                  </select>
+                  
+                    
+                  {animalType === 'Cachorro' && (
+                      
+                      <select
+                        required
+                        id="raca1"
+                        {...register('raca')}
+                        className="form-select"
+                        aria-label="Default select example"
+                        
+                      >
+                        <option value="" disabled selected hidden>
+                          Raça
+                        </option>
+                        <option value="Pomerânia">Pomerânia</option>
+                        <option value="Bulldog Francês">Bulldog Francês</option>
+                        <option value="Shih Tzu">Shih Tzu</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                        <option value="Pug">Pug</option>
+                        <option value="Golden Retriever">Golden Retriever</option>
+                        <option value="Pastor Alemão">Pastor Alemão</option>
+                        <option value="Yorkshire Terrier">Yorkshire Terrier</option>
+                        <option value="Border Collie">Border Collie</option>
+                      </select>
+                    
+                  )}
+
+                  {animalType === 'Gato' && (
+                    
+                      <select
+                        required
+                        id="raca2"
+                        {...register('raca')}
+                        className="form-select"
+                        aria-label="Default select example"
+                        
+                      >
+                        <option value="" disabled selected hidden>
+                          Raça
+                        </option>
+                        <option value="Persa e Himalaia">Persa e Himalaia</option>
+                        <option value="Siamês">Siamês</option>
+                        <option value="Maine Coon">Maine Coon</option>
+                        <option value="Angorá">Angorá</option>
+                        <option value="Sphynx">Sphynx</option>
+                        <option value="Ragdoll">Ragdoll</option>
+                        <option value="Ashera">Ashera</option>
+                        <option value="American Shorthair">American Shorthair</option>
+                        <option value="Exótico">Exótico</option>
+                      </select>
+                  )}
+            </div>
+
          </Form.Group>
 
-         <Form.Group as={Col} md="2" controlId="raca">
-           <Form.Label>Raça: </Form.Label>
-           <Form.Control type="text" {...register('raca')}/>
-         </Form.Group>
+       
          <Form.Group as={Col} md="1" controlId="peso">
            <Form.Label>Peso: </Form.Label>
            <Form.Control type="text" {...register('peso')}/>

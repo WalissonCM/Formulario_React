@@ -11,27 +11,6 @@ yarn dev
 # or
 pnpm dev
 ```
-/* <select id="1">
-<option value="1">....</option>
-<option value="2">....</option>
-<option value="3">....</option> 
-</select>
-
-<select id="2" style="display:none;">
-<option value="1">....</option>
-<option value="2">....</option>
-<option value="3">....</option> 
-</select>
-Your Jquery Here
-
-$("#1").change(function(){
-    if($(this).val() == 3){
-      $("#2").show();
-    }else{
-      $("#2").hide();
-    }
-
-}); */
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

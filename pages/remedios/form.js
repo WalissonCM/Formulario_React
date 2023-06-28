@@ -55,7 +55,7 @@ const form = () => {
             }
           </Form.Group>
 
-          <Form.Group as={Col} md="1" controlId="preco">
+          <Form.Group as={Col} md="2" controlId="preco">
            <Form.Label>Preço: </Form.Label>
            <Form.Control type="text" mask= "R$ 999" {...register('preco', remedioValidator.preco)} onChange={handleChange}/>
             {
@@ -64,7 +64,7 @@ const form = () => {
             }
           </Form.Group>
       
-      <Form.Group as={Col} md="2">
+      <Form.Group as={Col} md="4" className='mt-2'>
            <Form.Label>Tipo de Animal: </Form.Label>
            <select required id='animal' {...register('animal')} class="form-select" aria-label="Default select example">
             <option value="" disabled selected hidden>Animal</option>
@@ -74,7 +74,7 @@ const form = () => {
           </select>
       </Form.Group>
          
-          <Form.Group as={Col} md="2" controlId="data_validade">
+          <Form.Group as={Col} md="2" className='mt-2' controlId="data_validade">
            <Form.Label>Data de Validade: </Form.Label>
            <Form.Control type="text" mask= "99/99/9999" {...register('data_validade', remedioValidator.data_validade)} onChange={handleChange}/>
             {
